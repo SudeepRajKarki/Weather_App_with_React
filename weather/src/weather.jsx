@@ -33,14 +33,20 @@ function Weather(){
         <div className="app">
           <h1>Weather App</h1>
           <div className="input-group">
-      <input
-        type="text"
-        placeholder="Enter city..."
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <button onClick={fetchWeather}>Get Weather</button>
-    </div>
+           <input
+              type="text"
+              placeholder="Enter city..."
+             value={city}
+             onChange={(e) => setCity(e.target.value)}
+             onKeyDown={(e) => {
+             if (e.key === 'Enter') {
+             fetchWeather();
+      }
+    }}
+  />
+  <button onClick={fetchWeather}>Get Weather</button>
+</div>
+
     
     
           {error && <p style={{ color: 'red' }}>{error}</p>}
