@@ -10,14 +10,24 @@
   color: #333;
 }
 
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
 input {
   padding: 10px 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
-  margin-right: 10px;
-  width: 200px;
+  flex: 1;
+  min-width: 150px;
+  max-width: 300px;
   transition: border-color 0.3s;
 }
 
@@ -42,41 +52,41 @@ button:hover {
 
 .weather-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Changed to column for better responsiveness */
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   background-color: white;
   padding: 20px;
   margin-top: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
 
 .weather-info img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .weather-info h2 {
   margin: 0 0 8px;
-  font-size: 24px;
+  font-size: clamp(18px, 4vw, 24px); /* Responsive font size */
 }
 
 .weather-info p {
   margin: 4px 0;
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
 }
-.input-group {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
+
 .footer {
   padding: 20px;
   background-color: #ffffff;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   border-top: 1px solid #ffffff;
+  margin-top: auto;
+  width: 100%;
 }
 
 .footer p {
@@ -95,7 +105,3 @@ button:hover {
 .footer a:hover {
   color: #0077ff;
 }
-
-
-    
-    
